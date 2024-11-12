@@ -16,17 +16,17 @@ if (edad >= 18) {
 }
 
 let total = 0;
-let opciones = `
-Elige una opción de entrada:
-1 - FULL FESTIVAL GENERAL $2500 + IVA
-2 - SÁBADO 1 FEV. GENERAL $1700 + IVA
-3 - DOMINGO 2 FEV. GENERAL $1700 + IVA
-4 - FULL FESTIVAL VIP $3200 + IVA
-5 - SÁBADO 1 FEV. VIP $2200 + IVA
-6 - DOMINGO 2 FEV. VIP $2200 + IVA`;
-
 let entradasCompradas = [];
 const IVA_TASA = 0.22;
+
+let opciones = `
+Elige una opción de entrada para agregar al carrito:
+1 - FULL FESTIVAL GENERAL $2500 + IVA
+2 - SÁBADO 1 FEB. GENERAL $1700 + IVA
+3 - DOMINGO 2 FEB. GENERAL $1700 + IVA
+4 - FULL FESTIVAL VIP $3200 + IVA
+5 - SÁBADO 1 FEB. VIP $2200 + IVA
+6 - DOMINGO 2 FEB. VIP $2200 + IVA`;
 
 function calcularIVA(precio) {
     return precio * IVA_TASA;
@@ -43,13 +43,13 @@ while (true) {
             break;
         case "2":
             total += 1700;
-            entradasCompradas.push("SÁBADO 1 FEV. GENERAL");
-            alert("Has seleccionado: SÁBADO 1 FEV. GENERAL por $1700 + IVA");
+            entradasCompradas.push("SÁBADO 1 FEB. GENERAL");
+            alert("Has seleccionado: SÁBADO 1 FEB. GENERAL por $1700 + IVA");
             break;
         case "3":
             total += 1700;
-            entradasCompradas.push("DOMINGO 2 FEV. GENERAL");
-            alert("Has seleccionado: DOMINGO 2 FEV. GENERAL por $1700 + IVA");
+            entradasCompradas.push("DOMINGO 2 FEB. GENERAL");
+            alert("Has seleccionado: DOMINGO 2 FEB. GENERAL por $1700 + IVA");
             break;
         case "4":
             total += 3200;
@@ -58,20 +58,20 @@ while (true) {
             break;
         case "5":
             total += 2200;
-            entradasCompradas.push("SÁBADO 1 FEV. VIP");
-            alert("Has seleccionado: SÁBADO 1 FEV. VIP por $2200 + IVA");
+            entradasCompradas.push("SÁBADO 1 FEB. VIP");
+            alert("Has seleccionado: SÁBADO 1 FEB. VIP por $2200 + IVA");
             break;
         case "6":
             total += 2200;
-            entradasCompradas.push("DOMINGO 2 FEV. VIP");
-            alert("Has seleccionado: DOMINGO 2 FEV. VIP por $2200 + IVA");
+            entradasCompradas.push("DOMINGO 2 FEB. VIP");
+            alert("Has seleccionado: DOMINGO 2 FEB. VIP por $2200 + IVA");
             break;
         default:
             alert("Opción no válida, por favor elige una opción entre 1 y 6.");
             continue;
     }
 
-    let continuar = prompt("¿Deseas agregar más entradas? (1. Sí / 2. No)").toLowerCase();
+    let continuar = prompt("¿Deseas agregar otra entrada al carrito? (1. Sí / 2. No)").toLowerCase();
     if (continuar !== '1' && continuar !== 'sí') {
         break; 
     }
@@ -80,4 +80,8 @@ while (true) {
 let totalIVA = calcularIVA(total);
 let totalConIVA = total + totalIVA;
 
-alert(`Subtotal: $${total.toFixed(2)}\nIVA (22%): $${totalIVA.toFixed(2)}\nTOTAL A PAGAR: $${totalConIVA.toFixed(2)}\nEntradas compradas: ${entradasCompradas.join(", ")}`);
+alert(`Resumen de compra de ${nombre}:
+Entradas compradas: ${entradasCompradas.join(", ")}
+Subtotal: $${total.toFixed(2)}
+IVA (22%): $${totalIVA.toFixed(2)}
+TOTAL A PAGAR: $${totalConIVA.toFixed(2)}`);
