@@ -3,11 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOBLE 5</title>
+    <title>Comprar Entradas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-container, .ticket-options, #results {
+            margin-top: 20px;
+        }
+        .ticket-options button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .ticket-options button:hover {
+            background-color: #45a049;
+        }
+        #finish-button {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #finish-button:hover {
+            background-color: #da190b;
+        }
+        #results {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+        }
+    </style>
 </head>
 <body>
-    <h1>Simulador Doble 5 Store</h1>
-    
+    <h1>Comprar Entradas</h1>
+    <div class="form-container">
+        <label for="userName">Tu nombre: </label>
+        <input type="text" id="userName" placeholder="Ingresa tu nombre">
+        <br><br>
+        <label for="userAge">Tu edad: </label>
+        <input type="number" id="userAge" placeholder="Ingresa tu edad">
+        <br><br>
+        <button id="submit-btn">Continuar</button>
+    </div>
+
+    <div class="ticket-options" id="ticket-options" style="display: none;">
+        <h2>Elige una entrada:</h2>
+        <button id="fullGeneral">FULL FESTIVAL GENERAL $2500 + IVA</button>
+        <button id="sabadoGeneral">SÁBADO 1 FEV. GENERAL $1700 + IVA</button>
+        <button id="domingoGeneral">DOMINGO 2 FEV. GENERAL $1700 + IVA</button>
+        <button id="fullVIP">FULL FESTIVAL VIP $3200 + IVA</button>
+        <button id="sabadoVIP">SÁBADO 1 FEV. VIP $2200 + IVA</button>
+        <button id="domingoVIP">DOMINGO 2 FEV. VIP $2200 + IVA</button>
+    </div>
+
+    <div id="results"></div>
+
+    <button id="finish-button" style="display: none;">Finalizar Compra</button>
+
     <script src="script.js"></script>
 </body>
 </html>
